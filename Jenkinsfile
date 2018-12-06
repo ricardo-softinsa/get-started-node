@@ -13,7 +13,7 @@ node {
 	echo "Four";
     withSonarQubeEnv('SonarServer') {
 		echo "Five";
-      bat ""${scannerHome}/bin/sonar-scanner""
+      bat """${scannerHome}/bin/sonar-scanner"""
 	  echo "Six";
     }
   }
