@@ -3,7 +3,7 @@ node {
     git 'https://github.com/ricardo-softinsa/get-started-node.git'
   }
   stage('Node Version'){
-	bat 'node -v'
+	bat 'php -v'
   }
   stage('SonarQube analysis') {
     // requires SonarQube Scanner 2.8+
