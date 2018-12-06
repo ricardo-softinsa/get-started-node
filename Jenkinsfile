@@ -8,10 +8,11 @@ node {
     // requires SonarQube Scanner 2.8+
 	echo "Three";
     def scannerHome = tool 'Scanner';
+	echo scannerHome;
 	echo "Four";
     withSonarQubeEnv('SonarServer') {
 		echo "Five";
-      bat """ ${scannerHome}/bin/sonar-scanner """
+      bat "${scannerHome}/bin/sonar-scanner"
 	  echo "Six";
     }
   }
