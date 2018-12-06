@@ -9,7 +9,7 @@ node {
 	echo "Three";
     def scannerHome = tool 'Scanner';
 	echo scannerHome;
-	echo "${scannerHome}/bin/sonar-scanner";
+	echo ""${scannerHome}/bin/sonar-scanner"";
 	echo "Four";
     withSonarQubeEnv('SonarServer') {
 		echo "Five";
