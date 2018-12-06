@@ -18,7 +18,7 @@ node {
     }
   }
   stage("SonarQube Quality Gate") { 
-	timeout(time: 1, unit: 'MINUTES') { 
+	timeout(time: 2, unit: 'MINUTES') { 
 	   def qg = waitForQualityGate() 
 	   if (qg.status != 'OK') {
 		 echo "Passou!";
