@@ -23,7 +23,7 @@ node {
 	   if(qg.status == "ERROR"){
 			echo "Failed Quality Gates";
 	   }
-	   if (qg.status != 'OK') {
+	   if (qg.status == 'OK') {
 		 echo "Passed Quality Gates!";
 	   }
 	   
