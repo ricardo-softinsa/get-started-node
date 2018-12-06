@@ -7,7 +7,7 @@ node {
 	def scannerHome = tool 'SonarScanner';
 	withSonarQubeEnv('Sonar') {
 	  echo "One";
-	  echo ${scannerHome};
+	  echo scannerHome;
 	  sh """ ${scannerHome}/bin/sonar-scanner -D sonar.login=admin -D sonar.password=admin """;
 	  echo "Two";
 	}
