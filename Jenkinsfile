@@ -2,6 +2,9 @@ node {
   stage('SCM') {
     git 'https://github.com/ricardo-softinsa/get-started-node.git'
   }
+  stage('Node Version'){
+	bat 'node -v'
+  }
   stage('SonarQube analysis') {
     // requires SonarQube Scanner 2.8+
     def scannerHome = tool 'Scanner';
