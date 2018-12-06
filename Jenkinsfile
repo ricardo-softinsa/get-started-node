@@ -22,4 +22,7 @@ node {
 	   
 	}
   }
+  stage("Proceed Testing"){
+		echo "It got here...";
+  }
 }
