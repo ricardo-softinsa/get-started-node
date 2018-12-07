@@ -30,7 +30,10 @@ node {
     		target: 'https://api.eu-gb.bluemix.net',
     		organization: 'ricardo.miguel.magalhaes@pt.softinsa.com',
     		cloudSpace: 'dev',
-    		credentialsId: 'CFPush'
+    		credentialsId: 'CFPush',
+		manifestChoice: [
+			manifestFile: 'manifest.yml'
+		]
 	)
 	echo "After pushing to Cloud";
   }
