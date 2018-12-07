@@ -3,7 +3,6 @@ node {
     git 'https://github.com/ricardo-softinsa/get-started-node.git'
   }
   stage('SonarQube analysis') {
-    // requires SonarQube Scanner 2.8+
     def scannerHome = tool 'Scanner';
     withSonarQubeEnv('SonarServer') {
       bat "\"${scannerHome}/bin/sonar-scanner\""
@@ -23,12 +22,16 @@ node {
 		 echo "Passed Quality Gates!";
 		 slackMet.afterQG(qg.status);
 	   }
-	   
 	}
   }
   stage("Pushing to Cloud"){
-		echo "Pushing to Cloud...";
-	  bat "ibmcloud login -u ricardo.miguel.magalhaes@pt.softinsa.com -s dev -o ricardo.miguel.magalhaes@pt.softinsa.com
+	echo "Pushing to Cloud...";
+	pushToCloudFoundry(
+    		target: 'https://node-softinsa-app.eu-gb.mybluemix.net/',
+    		organization: 'ricardo.miguel.magalhaes@pt.softinsa.com',
+    		cloudSpace: 'dev',
+    		credentialsId: 'CFPush'
+	)
+	echo "After pushing to Cloud";
   }
-
 }
