@@ -25,6 +25,7 @@ node {
 	}
   }
   stage("Pushing to Cloud"){
+	def slackMet = load("slackNotifications.groovy");
 	echo "Pushing into the cloud...";
 	cfPush(
 		target: 'api.eu-gb.bluemix.net',
