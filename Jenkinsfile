@@ -26,7 +26,7 @@ node {
   }
   stage("Pushing to Cloud"){
 	cfPush(
-		target: 'node-softinsa-app.eu-gb.mybluemix.net',
+		target: 'api.eu-gb.bluemix.net',
     		organization: 'ricardo.miguel.magalhaes@pt.softinsa.com',
     		cloudSpace: 'dev',
 		credentialsId: 'CFTest',
