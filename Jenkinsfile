@@ -31,7 +31,6 @@ node {
     		organization: 'ricardo.miguel.magalhaes@pt.softinsa.com',
     		cloudSpace: 'dev',
     		credentialsId: 'CFPush',
-		selfSigned: true,
 		manifestChoice: [
 			manifestFile: 'manifest.yml'
 		]
