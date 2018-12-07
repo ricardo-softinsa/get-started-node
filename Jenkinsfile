@@ -28,6 +28,7 @@ node {
   }
   stage("Pushing to Cloud"){
 		echo "Pushing to Cloud...";
+	  bat "ibmcloud login -u ricardo.miguel.magalhaes@pt.softinsa.com -s dev -o ricardo.miguel.magalhaes@pt.softinsa.com
   }
 
 }
