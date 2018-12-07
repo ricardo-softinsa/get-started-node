@@ -27,7 +27,7 @@ node {
   stage("Pushing to Cloud"){
 	echo "Pushing to Cloud...";
 	pushToCloudFoundry(
-		target: 'http://node-softinsa-app.eu-gb.mybluemix.net',
+		target: 'https://api.eu-gb.mybluemix.net',
     		organization: 'ricardo.miguel.magalhaes@pt.softinsa.com',
     		cloudSpace: 'dev',
 		credentialsId: 'CFPush',
