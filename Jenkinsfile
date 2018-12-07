@@ -10,20 +10,28 @@ node {
     }
   }
   stage("SonarQube Quality Gate") { 
+	def slackMet = load("slackNotifications.groovy");
 	timeout(time: 2, unit: 'MINUTES') { 
 	   def qg = waitForQualityGate() 
 	   if(qg.status == "ERROR"){
 		echo "Failed Quality Gates";
+		slackMet.afterQG(qg.status);
 		error "Pipeline aborted due to quality gate failure: ${qg.status}"
 		waitForQualityGate abortPipeline: true
 	   }
 	   if (qg.status == 'OK') {
 		 echo "Passed Quality Gates!";
+		 slackMet.afterQG(qg.status);
 	   }
 	   
 	}
   }
   stage("Proceed Testing"){
 		echo "It got here...";
+  }
+  post {
+	  aborted {
+	    slackSend color: "danger", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} has been aborted."
+	  }
   }
 }
