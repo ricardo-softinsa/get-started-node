@@ -31,6 +31,9 @@ node {
     		organization: 'ricardo.miguel.magalhaes@pt.softinsa.com',
     		cloudSpace: 'dev',
 		credentialsId: 'CFPush',
+		manifestChoice: [
+			manifestFile: 'manifest.yml'
+		]
 	)
 	echo "After pushing to Cloud";
   }
