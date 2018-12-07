@@ -15,6 +15,7 @@ node {
 	   if(qg.status == "ERROR"){
 		echo "Failed Quality Gates";
 		error "Pipeline aborted due to quality gate failure: ${qg.status}"
+		waitForQualityGate abortPipeline: true
 	   }
 	   if (qg.status == 'OK') {
 		 echo "Passed Quality Gates!";
