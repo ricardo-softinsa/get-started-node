@@ -26,8 +26,8 @@ node {
 	   
 	}
   }
-  stage("Proceed Testing"){
-		echo "It got here...";
+  stage("Pushing to Cloud"){
+		echo "Pushing to Cloud...";
   }
 
 }
