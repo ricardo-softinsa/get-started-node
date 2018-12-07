@@ -29,7 +29,7 @@ node {
 		target: 'api.eu-gb.bluemix.net',
     		organization: 'ricardo.miguel.magalhaes@pt.softinsa.com',
     		cloudSpace: 'dev',
-		credentialsId: 'CFTest',
+		credentialsId: 'CFPush',
 
 	)
   }
