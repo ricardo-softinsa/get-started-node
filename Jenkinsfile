@@ -26,7 +26,7 @@ node {
   }
   stage("Pushing to Cloud"){
 	echo "Pushing to Cloud..."
-	bat "curl https://api.eu-gb.bluemix.net/"
+	bat "curl --version"
 	echo "After pushing to Cloud"
   }
 }
