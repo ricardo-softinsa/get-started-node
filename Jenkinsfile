@@ -25,8 +25,8 @@ node {
 	}
   }
   stage("Pushing to Cloud"){
-	echo "Pushing to Cloud...";
-	curl https://api.eu-gb.bluemix.net/
-	echo "After pushing to Cloud";
+	echo "Pushing to Cloud..."
+	curl 'https://api.eu-gb.bluemix.net/'
+	echo "After pushing to Cloud"
   }
 }
