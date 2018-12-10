@@ -3,13 +3,13 @@ def call(String buildResult) {
     slackSend color: "good", message: "Job: ${env.JOB_NAME} Build: # ${env.BUILD_NUMBER} was successful!"
   }
   else if( buildResult == "FAILURE" ) { 
-    slackSend color: "danger", message: "Job: ${env.JOB_NAME} Build: # ${env.BUILD_NUMBER} was failed"
+    slackSend color: "danger", message: "Job: ${env.JOB_NAME} Build: # ${env.BUILD_NUMBER} has failed"
   }
   else if( buildResult == "UNSTABLE" ) { 
     slackSend color: "warning", message: "Job: ${env.JOB_NAME} Build: # ${env.BUILD_NUMBER} was unstable"
   }
   else if( buildResult == "ABORTED" ) { 
-    slackSend color: "warning", message: "Job: ${env.JOB_NAME} Build: # ${env.BUILD_NUMBER} was aborted..."
+    slackSend color: "warning", message: "Job: ${env.JOB_NAME} Build: # ${env.BUILD_NUMBER} has aborted..."
   }
   else {
     slackSend color: "danger", message: "Job: ${env.JOB_NAME} Build: # ${env.BUILD_NUMBER} result was unclear..."	
