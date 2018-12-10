@@ -35,6 +35,12 @@ node {
 	)
 	slackMet.call(currentBuild.currentResult);
   }
+  post{
+	def slackMet = load("slackNotifications.groovy");
+	failure{
+		slackMet.call(currentBuild.currentResult);
+	}
+  }
   stage("Check App Status"){
 	echo "Checking if the App is live..."
 	def slackMet = load("slackNotifications.groovy");
@@ -45,12 +51,6 @@ node {
 	}catch(e){
 		echo "The app is down..."
 		slackMet.isRunning("NotRunning");
-	}
-  }
-  post{
-	def slackMet = load("slackNotifications.groovy");
-	failure{
-		slackMet.call(currentBuild.currentResult);
 	}
   }
 }
