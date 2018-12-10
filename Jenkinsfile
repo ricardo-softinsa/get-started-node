@@ -36,6 +36,7 @@ node {
 	slackMet.call(currentBuild.currentResult);
   }
   stage("Check Status"){
-	  bat "curl -s -o /dev/null -w "%{http_code}" https://node-softinsa-app.eu-gb.mybluemix.net/"
+	echo "Checking if the App is live..."
+	bat "curl -s -o /dev/null -w "%{http_code}" https://node-softinsa-app.eu-gb.mybluemix.net/"
   }
 }
