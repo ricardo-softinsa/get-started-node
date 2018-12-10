@@ -27,7 +27,7 @@ def afterQG(String QAResult) {
 
 def isRunning(String state){
 	if(state == "Running"){
-		slackSend color: "good", message: "Job: ${env.JOB_NAME} Build: # ${env.BUILD_NUMBER}. Your app is running!"
+		slackSend color: "good", message: "Job: ${env.JOB_NAME} Build: # ${env.BUILD_NUMBER}. Your app is up and running!"
 	}else{
 		slackSend color: "danger", message: "Job: ${env.JOB_NAME} Build: # ${env.BUILD_NUMBER}. Your app is not running!"
 	}
