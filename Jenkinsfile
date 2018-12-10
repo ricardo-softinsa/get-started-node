@@ -27,7 +27,12 @@ node {
   stage("Pushing to Cloud"){
 	def slackMet = load("slackNotifications.groovy");
 	echo "Pushing into the cloud...";
-
+	cfPush(
+		target: 'api.eu-gb.bluemix.net',
+		organization: 'ricardo.miguel.magalhaes@pt.softinsa.com',
+		cloudSpace: 'dev',
+		credentialsId: 'CFPush',
+	)
 	slackMet.call(currentBuild.currentResult);
   }
   stage("Check App Status"){
