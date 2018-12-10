@@ -32,6 +32,6 @@ node {
   }
   stage("Check App Status"){
 	echo "Checking if the App is live..."
-	bat "curl -s -o /dev/null -w \%\{http_code} \"https://node-softinsa-app.eu-gb.mybluemix.net/\""
+	bat "curl -s -o /dev/null -w \%{http_code} \"https://node-softinsa-app.eu-gb.mybluemix.net/\""
   }
 }
