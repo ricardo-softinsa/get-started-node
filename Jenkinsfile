@@ -36,6 +36,7 @@ node {
 	slackMet.call(currentBuild.currentResult);
   }
   post{
+	echo "Post cloud push"
 	def slackMet = load("slackNotifications.groovy");
 	failure{
 		slackMet.call(currentBuild.currentResult);
