@@ -37,7 +37,7 @@ node {
   }
   stage("Check Status"){
 	echo "Checking if the App is live..."
-	bat php --version
+	bat "php --version"
 	bat """curl"""
   }
 }
