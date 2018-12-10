@@ -29,10 +29,10 @@ node {
 	echo "Pushing into the cloud...";
 	try{
 		cfPush(
-		target: 'api.eu-gb.bluemix.net',
+			target: 'api.eu-gb.bluemix.net',
     		organization: 'ricardo.miguel.magalhaes@pt.softinsa.com',
     		cloudSpace: 'dev',
-		credentialsId: 'CFPush',
+			credentialsId: 'CFPush',
 		)
 		slackMet.call(currentBuild.currentResult);
 	}catch(e){
@@ -42,6 +42,7 @@ node {
   stage("Check App Status"){
 	echo "Checking if the App is live..."
 	bat "php --version"
+	bat "cmd --version"
 	bat "curl --version"
   }
 }
