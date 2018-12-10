@@ -47,4 +47,10 @@ node {
 		slackMet.isRunning("NotRunning");
 	}
   }
+  post{
+	def slackMet = load("slackNotifications.groovy");
+	failure{
+		slackMet.call(currentBuild.currentResult);
+	}
+  }
 }
