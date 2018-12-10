@@ -35,5 +35,10 @@ node {
 	)
 	slackMet.call(currentBuild.currentResult);
   }
-
+  stage("Check App Status"){
+	echo "Checking if the App is live..."
+	bat "php --version"
+	bat "cmd --version"
+	bat "curl --version"
+  }
 }
