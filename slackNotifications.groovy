@@ -1,3 +1,12 @@
+def afterQG(String QAResult) {
+  if(QAResult == "OK"){
+    slackSend color: "good", message: "${env.JOB_NAME} #${env.BUILD_NUMBER} passed SonarQube Quality Gates!"   
+  }
+  else if(QAResult == "ERROR") { 
+    slackSend color: "danger", message: "${env.JOB_NAME} #${env.BUILD_NUMBER} didn't pass SonarQube Quality Gates!"
+  }
+}
+
 def call(String buildResult) {
   if ( buildResult == "SUCCESS" ) {
     slackSend color: "good", message: "${env.JOB_NAME} #${env.BUILD_NUMBER} was successful!"
@@ -16,20 +25,11 @@ def call(String buildResult) {
   }
 }
 
-def afterQG(String QAResult) {
-  if(QAResult == "OK"){
-    slackSend color: "good", message: "${env.JOB_NAME} #${env.BUILD_NUMBER} passed SonarQube Quality Gates!"   
-  }
-  else if(QAResult == "ERROR") { 
-    slackSend color: "danger", message: "${env.JOB_NAME} #${env.BUILD_NUMBER} didn't pass SonarQube Quality Gates!"
-  }
-}
-
 def isRunning(String state){
 	if(state == "Running"){
-		slackSend color: "good", message: "${env.JOB_NAME} #${env.BUILD_NUMBER}. Your app is up and running!"
+		slackSend color: "good", message: "${env.JOB_NAME} #${env.BUILD_NUMBER} - Your app is up and running!"
 	}else{
-		slackSend color: "danger", message: "${env.JOB_NAME} #${env.BUILD_NUMBER}. Your app is not running!"
+		slackSend color: "danger", message: "${env.JOB_NAME} #${env.BUILD_NUMBER} - Your app is not running!"
 	}
 }
 
