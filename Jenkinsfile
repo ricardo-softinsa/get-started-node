@@ -50,6 +50,7 @@ node {
 	  }
 	}
 	finally{
+		echo "Finallyyyyy"
 		if(currentBuild.currentResult == "FAILURE")
 			slackMet.call(currentBuild.currentResult);
 	}
