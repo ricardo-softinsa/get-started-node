@@ -33,7 +33,7 @@ node {
   stage("Check App Status"){
 	echo "Checking if the App is live..."
 	try{
-		bat "curl -s --head  --request GET https://node-softinsa-app.eu-gb.mybluemixs.net/ | grep '200 OK'"
+		bat "curl -s --head  --request GET https://node-softinsa-app.eu-gb.mybluemix.net/ | grep '200 OK'"
 		echo "The app is up and running!"
 	}catch(e){
 		echo "The app is down..."
