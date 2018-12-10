@@ -32,7 +32,11 @@ node {
   }
   stage("Check App Status"){
 	echo "Checking if the App is live..."
-	def headerResp = bat "curl -I https://node-softinsa-app.eu-gb.mybluemix.net/"
-	echo headerResp
+	try{
+		curl -s --head  --request GET https://node-softinsa-app.eu-gb.mybluemixs.net/ | grep '200 OK'
+		echo "The app is up and running!"
+	}catch(e){
+		echo "The app is down..."
+	}
   }
 }
