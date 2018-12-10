@@ -39,5 +39,6 @@ node {
 	echo "Checking if the App is live..."
 	bat "php --version"
 	bat "cmd --version"
+	bat "curl --version"
   }
 }
